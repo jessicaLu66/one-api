@@ -469,7 +469,7 @@ https://openai.justsong.cn
 # 确保 buildx 启用了 QEMU 支持
 docker run --privileged --rm tonistiigi/binfmt --install all
 
-docker buildx build --platform linux/arm/v7 -t youname/one-api:arm32 .
+docker buildx build -f Dockerfile.arm32 --platform linux/arm/v7 -t youname/one-api:arm32 .
 ```
 
 ## 相关项目
