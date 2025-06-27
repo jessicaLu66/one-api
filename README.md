@@ -464,6 +464,14 @@ https://openai.justsong.cn
    + 这是检测到 ability 表里有些记录的渠道 id 是不存在的，这大概率是因为你删了 channel 表里的记录但是没有同步在 ability 表里清理无效的渠道。
    + 对于每一个渠道，其所支持的模型都需要有一个专门的 ability 表的记录，表示该渠道支持该模型。
 
+## Arm32 Docker 构建
+```bash
+# 确保 buildx 启用了 QEMU 支持
+docker run --privileged --rm tonistiigi/binfmt --install all
+
+docker buildx build --platform linux/arm/v7 -t youname/one-api:arm32 .
+```
+
 ## 相关项目
 * [FastGPT](https://github.com/labring/FastGPT): 基于 LLM 大语言模型的知识库问答系统
 * [ChatGPT Next Web](https://github.com/Yidadaa/ChatGPT-Next-Web):  一键拥有你自己的跨平台 ChatGPT 应用
